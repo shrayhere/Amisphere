@@ -1,0 +1,212 @@
+/* Dark Theme Custom Styles */
+
+/* Glassmorphism Effects */
+.glass-card {
+    background: rgba(27, 33, 48, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(251, 191, 36, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card-hover {
+    transition: all 0.25s ease;
+}
+
+.glass-card-hover:hover {
+    background: rgba(27, 33, 48, 0.9);
+    border-color: rgba(251, 191, 36, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(251, 191, 36, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Glow Effects */
+.glow-ring-gold {
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3);
+}
+
+.glow-ring-blue {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Focus States */
+.focus-glow-gold:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.4);
+    border-color: #fbbf24;
+}
+
+.focus-glow-blue:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+    border-color: #3b82f6;
+}
+
+/* Button Press Effect */
+.btn-press {
+    transition: all 0.15s ease;
+}
+
+.btn-press:active {
+    transform: scale(0.98) translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Glow Lift */
+.hover-glow-lift {
+    transition: all 0.25s ease;
+}
+
+.hover-glow-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+/* Custom Scrollbar - Dark Theme */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #141821;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Floating Label Animation */
+.floating-label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+    pointer-events: none;
+    color: #9ca3af;
+}
+
+.floating-input:focus~.floating-label,
+.floating-input:not(:placeholder-shown)~.floating-label {
+    top: -8px;
+    font-size: 12px;
+    color: #fbbf24;
+    background: #1b2130;
+    padding: 0 4px;
+}
+
+/* Neon Outline Effect */
+.neon-outline {
+    position: relative;
+}
+
+.neon-outline::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, #fbbf24, #3b82f6);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.neon-outline:hover::before {
+    opacity: 0.5;
+}
+
+/* Gradient Text */
+.gradient-text-gold {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Active Indicator Strip */
+.active-strip {
+    position: relative;
+}
+
+.active-strip::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%);
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+    border-radius: 0 2px 2px 0;
+}
+
+/* Skeleton Loading Animation */
+@keyframes skeleton-loading {
+    0% {
+        background-position: -200px 0;
+    }
+
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #1b2130 0px, #374151 100px, #1b2130 200px);
+    background-size: 200px 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+/* Page Transition */
+.page-transition-enter {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.page-transition-exit {
+    opacity: 1;
+}
+
+.page-transition-exit-active {
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+/* Input Glow Animation */
+@keyframes input-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 4px rgba(251, 191, 36, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+    }
+}
+
+.input-focus-glow:focus {
+    animation: input-glow 0.6s ease;
+}
